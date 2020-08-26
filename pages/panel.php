@@ -29,10 +29,10 @@ setlocale(LC_ALL, "fr_FR.utf8", "fra");
 </head>
 
 <body class="">
-    <main class="flex">
+    <main class="flex bg-blue-800">
         <div class="w-1/6 h-screen bg-blue-800">
             <div class="flex flex-col items-center justify-center mt-12">
-                <img class="rounded-full w-32 border-2" src="https://avatars3.githubusercontent.com/u/19912551" alt="Photo de profil">
+                <img class="rounded-full w-32 border-2" src="../public/assets/img/profil.svg" alt="Photo de profil">
                 <p class="mt-3 font-bold text-white">Dimitri ONGOUA</p>
                 <span class="bg-orange-600 text-white font-bold px-1 rounded-md">105 bits</span>
             </div>
@@ -40,6 +40,7 @@ setlocale(LC_ALL, "fr_FR.utf8", "fra");
                 <li class="font-bold cursor-pointer px-5 py-2 bg-gray-200 text-blue-900"><span class="transition duration-500 block transform hover:translate-x-2">Panel</span></li>
                 <li class="font-bold text-white cursor-pointer px-5 py-2"><span class="transition duration-500 block transform hover:translate-x-2">Mes bits</span></li>
                 <li class="font-bold text-white cursor-pointer px-5 py-2"><span class="transition duration-500 block transform hover:translate-x-2">Mes informations</span></li>
+                <li class="font-bold text-white cursor-pointer px-5 py-2"><a href="comptes.php"><span class="transition duration-500 block transform hover:translate-x-2">Comptes</span></a></li>
                 <li class="font-bold text-white cursor-pointer px-5 py-2"><span class="transition duration-500 block transform hover:translate-x-2">Travaux</span></li>
             </ul>
             <a class="flex items-center justify-center text-gray-100 relative text-center bottom-0 block py-2 w-full px-4 transition duration-500 text-blue-400" href="../traitements/deconnexion.php">

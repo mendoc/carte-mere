@@ -4,19 +4,30 @@ require_once 'debug.php';
 class Donnees
 {
 
-    private $configFile;
-    private $baseUrl = "https://carte-mere.netlify.app/.netlify/functions";
+    private static $baseUrl = "https://carte-mere.netlify.app/.netlify/functions";
 
-    public function get(Array $params)
+    public static function get(array $params)
     {
-        $url = $this->baseUrl . "/get";
+        $url = Donnees::$baseUrl . "/get";
 
-        $docs = $this->requete($url, $params);
+        $res =  Donnees::requete($url, $params);
 
-        //header('Content-Type: application/json');
-        $docs = json_decode($docs, true);
+        $res = json_decode($res, true);
 
-        return $docs;
+        if (isset($res['error']) and $res['error'] == true) {
+            return [];
+        }
+
+        return $res['data'];
+    }
+
+    public static function add(array $params)
+    {
+        $url = Donnees::$baseUrl . "/add";
+
+        $res =  Donnees::requete($url, $params);
+
+        return json_decode($res, true);
     }
 
     /**
@@ -24,7 +35,7 @@ class Donnees
      * @param String $url Endpoint for database function handler
      * @param String $fields Fields to send
      */
-    function requete(String $url, Array $fields)
+    public static function requete(String $url, array $fields)
     {
         $fields = json_encode($fields);
 
