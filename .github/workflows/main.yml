@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Déploiement sur alwaysdata
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -28,7 +28,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-          ftp-server: ftp-mende.alwaysdata.net
+          ftp-server: ftp://ftp-mende.alwaysdata.net/www/carte-mere
           # FTP account username
           ftp-username: mende
           # FTP account password
