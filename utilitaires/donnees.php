@@ -35,7 +35,7 @@ class Donnees
      * @param String $url Endpoint for database function handler
      * @param String $fields Fields to send
      */
-    public static function requete(string $url, array $fields)
+    public static function requete($url, array $fields)
     {
         $fields = json_encode($fields);
 
